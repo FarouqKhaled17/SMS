@@ -4,6 +4,7 @@ public class Teacher {
     int id;
     String name;
     float salary;
+    float salaryEarned;
 
     /**
      * Creates a new teacher
@@ -15,6 +16,7 @@ public class Teacher {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.salaryEarned = 0;
     }
 
     /**
@@ -49,5 +51,8 @@ public class Teacher {
         this.salary = salary;
     }
 
-
+    public void receiveSalary(float salary) {
+        salaryEarned+=salary;
+        School.setTotalMoneySpent(salary);
+    }
 }

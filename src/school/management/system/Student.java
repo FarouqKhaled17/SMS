@@ -27,7 +27,7 @@ public class Student {
      * update the student grade
      * @param grade the grade of the student
      */
-    public void setgrade(int grade){
+    public void setGrade(int grade){
         this.grade = grade;
     }
 
@@ -35,8 +35,9 @@ public class Student {
      * update the student fees
      * @param feesPaid the fees of the student
      */
-    public void setFeesPaid(int feesPaid){
+    public void payFees(int feesPaid){
         this.feesPaid+=feesPaid;
+        School.setTotalMoneyEarned(this.feesPaid);
     }
 
     /**
@@ -77,5 +78,12 @@ public class Student {
      */
     public int getFeesTotal() {
         return feesTotal;
+    }
+
+    /**
+     * @return the remaining fees of the student
+     */
+    public int getRemainingFees() {
+        return feesTotal-feesPaid;
     }
 }

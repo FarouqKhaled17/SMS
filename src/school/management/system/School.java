@@ -5,8 +5,8 @@ import java.util.List;
 public class School {
     private List<Student> students;
     private List<Teacher> teachers;
-    private float totalMoneySpent;
-    private float totalMoneyEarned;
+    private static float totalMoneySpent;
+    private static float totalMoneyEarned;
 
     /**
      *
@@ -56,15 +56,16 @@ public class School {
      * to update the total spent money
      * @param moneySpent the total amount spent money
      */
-    public void setTotalMoneySpent(float moneySpent) {
-        totalMoneySpent -= moneySpent;
+    public static void setTotalMoneySpent(float moneySpent) {
+        totalMoneyEarned -= moneySpent;
+        totalMoneySpent += moneySpent;
     }
 
     /**
      * to update the total money earned
      * @param totalMoneyEarn the total amount earned money
      */
-    public void setTotalMoneyEarned(float totalMoneyEarn) {
+    public static void setTotalMoneyEarned(float totalMoneyEarn) {
         totalMoneyEarned += totalMoneyEarn;
     }
 
